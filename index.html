@@ -3,6 +3,7 @@
 <head>
 	<title>Timesheet</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -22,7 +23,34 @@
 			</div>
 			
 		</div>
-		<div class="row"></div>
+    
+		<div class="row" id="add-employee">
+      <div class="panel panel-default">
+      	<div class="panel-heading" id='panel-head'>
+          Add Employee
+        </div>
+    		<div class="panel-body">
+          Employee Name:
+          <input type="text" class="form-control" id="employee-name" required>
+        </div>
+        <div class="panel-body">
+          Role
+          <input type="text" class="form-control" id="role">
+        </div>
+        <div class="panel-body">
+          Start Date (DD/MM/YY)
+          <input type="text" class="form-control" id="start-date">
+        </div>
+    		<div class="panel-body">
+          Monthly Role
+          <input type="text" class="form-control" id="monthly-role">
+        </div>
+        <button class="btn" id='submit-button'>
+          Submit
+        </button>
+        
+      </div>
+  	</div>
 			
 	</div>
 
