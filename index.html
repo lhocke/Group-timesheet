@@ -12,18 +12,43 @@
 			<p>A comprehensive Directory of Employee Billable Hours<p>
 		</div>
 		<div class="row panel panel-default">
-			<div class="panel-heading"></div>
-			<div class="panel-body">
-				<div class="col-md-2"></div>
-				<div class="col-md-2"></div>
-				<div class="col-md-2"></div>
-				<div class="col-md-2"></div>
-				<div class="col-md-2"></div>
-				<div class="col-md-2"></div>
-			</div>
-			
-		</div>
-    
+      <div class="panel-heading">
+       <p>Current Employees</p>
+      </div>
+        <div class="panel-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name:</th>
+                <th>Employee</th>
+                <th>Last Name</th>
+                <th>Username</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+
 		<div class="row" id="add-employee">
       <div class="panel panel-default">
       	<div class="panel-heading" id='panel-head'>
@@ -42,8 +67,8 @@
           <input type="text" class="form-control" id="start-date">
         </div>
     		<div class="panel-body">
-          Monthly Role
-          <input type="text" class="form-control" id="monthly-role">
+          Monthly rate
+          <input type="text" class="form-control" id="monthly-rate">
         </div>
         <button class="btn" id='submit-button'>
           Submit
