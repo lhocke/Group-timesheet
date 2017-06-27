@@ -11,19 +11,28 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 //extract new employ info
-$('#sumbit-button').on('click', function(){
-  var newName = $('#emoloyee-name').val().trim();
+$("#submit-button").on('click', function(){
+  var newName = $('#employee-name').val().trim();
   var newRole = $('#role').val().trim();
   var newStartDate = $('#start-date').val().trim();
   var newRate = $('#monthly-rate').val().trim();
-
+  //push new employee info to firebase database
   database.ref().push({
     name: newName,
     role: newRole,
     rate: newRate,
     date: newStartDate,
-    
+    startedAt: firebase.database.ServerValue.TIMESTAMP
   })
+  console.log('attempt to push')
+})
+
+//listen for a new child
+database.ref().on('child_added', function(snap){
+  console.log('snap.val(): ' + snap.val())
+
+}, function(err){
+  console.log(err.code)
 })
 
 
