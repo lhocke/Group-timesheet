@@ -29,7 +29,8 @@ $("#submit-button").on('click', function(){
 
 //listen for a new child
 database.ref().on('child_added', function(snap){
-  console.log('snap.val(): ' + snap.val())
+  console.log(snap.val())
+  
 
 }, function(err){
   console.log(err.code)
