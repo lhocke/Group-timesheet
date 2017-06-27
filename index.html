@@ -12,13 +12,28 @@
 			<p>A comprehensive Directory of Employee Billable Hours<p>
 		</div>
 		<div class="row panel panel-default">
-			<div class="panel-heading"></div>
-			<div class="panel-body">
-        <table class="table" id="employee-list"></table>
-			</div>
-			
-		</div>
-    
+
+      <div class="panel-heading">
+        Current Employees
+      </div>
+        <div class="panel-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Employee Name:</th>
+                <th>Role</th>
+                <th>Start Date</th>
+                <th>Months Worked</th>
+                <th>Monthly Rate ($)</th>
+                <th>Total Billed ($)</th>
+              </tr>
+            </thead>
+            <tbody id="employee-list>
+            </tbody>
+          </table>
+        </div>
+    </div>
+
 		<div class="row" id="add-employee">
       <div class="panel panel-default">
       	<div class="panel-heading" id='panel-head'>
@@ -37,8 +52,8 @@
           <input type="text" class="form-control" id="start-date">
         </div>
     		<div class="panel-body">
-          Monthly Role
-          <input type="text" class="form-control" id="monthly-role">
+          Monthly rate
+          <input type="text" class="form-control" id="monthly-rate">
         </div>
         <button class="btn" id='submit-button'>
           Submit
