@@ -25,15 +25,30 @@ $("#submit-button").on('click', function(){
     startedAt: firebase.database.ServerValue.TIMESTAMP
   })
   console.log('attempt to push')
+  $('input').val('')
 })
 
 //listen for a new child
 database.ref().on('child_added', function(snap){
   console.log(snap.val())
-  
+  var monthsConvert = moment(snap.val().date, "DD/MM/YYYY")
+  var monthsWorked = moment().diff(monthsConvert, 'months')
+  var payToDate = monthsWorked * snap.val().rate
+  console.log(moment().diff(snap.val().date, "months"))
+  console.log(payToDate)
+
+  var employeeInfo = $('<tr>');
+  var displayName = $('<td>').append(snap.val().name);
+  var displayRole = $('<td>').append(snap.val().role);
+  var displayStart = $('<td>').append(snap.val().date);
+  var displayMonths = $('<td>').append(monthsWorked);
+  var displayRate = $('<td>').append(snap.val().rate);
+  var displayPay = $('<td>').append(payToDate);
+
+  employeeInfo.append(displayName, displayRole, displayStart, displayMonths, displayRate, displayPay)
+  $('#employee-list').append(employeeInfo)
 
 }, function(err){
   console.log(err.code)
 })
-
 
